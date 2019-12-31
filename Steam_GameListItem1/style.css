@@ -11,8 +11,9 @@
 }
 
 .video-list li {
-  height: 400px;
-  width: 320px;
+  cursor: pointer;
+  height: 408px;
+  width: 340px;
   overflow: hidden;
   font-size: 12px;
   /* 陰影 */
@@ -44,7 +45,7 @@
 }
 
 .video-list li .hero-content {
-  height: 170px;
+  height: 178px;
   background: -webkit-gradient(linear, left top, left bottom, from(#294971), to(#113158));
   background: linear-gradient(#294971 0%, #113158 100%);
   padding: 20px 20px;
@@ -81,8 +82,8 @@
 
 .video-list li:hover .hover-screenshots,
 .video-list li:hover .hero-content {
-  -webkit-transform: translateY(-400px);
-          transform: translateY(-400px);
+  -webkit-transform: translateY(-408px);
+          transform: translateY(-408px);
   opacity: 1;
 }
 

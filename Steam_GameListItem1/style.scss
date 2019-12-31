@@ -12,8 +12,10 @@
       transition: ease-out 0.4s;
     }
 
-    height: 400px;
-    width: 320px;
+    cursor: pointer;
+
+    height: 408px;
+    width: 340px;
     overflow: hidden;
 
     font-size: 12px;
@@ -39,7 +41,7 @@
     }
 
     .hero-content {
-      height: 170px;
+      height: 178px;
       background: linear-gradient(
         rgba(41, 73, 113, 1) 0%,
         rgba(17, 49, 88, 1) 100%
@@ -76,7 +78,7 @@
     &:hover {
       .hover-screenshots,
       .hero-content {
-        transform: translateY(-400px);
+        transform: translateY(-408px);
         opacity: 1;
       }
 
