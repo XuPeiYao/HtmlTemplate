@@ -1,0 +1,92 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* 影片列表 */
+.video-list {
+  /* 不顯示順序編號 */
+  list-style-type: none;
+}
+
+.video-list li {
+  height: 400px;
+  width: 320px;
+  overflow: hidden;
+  font-size: 12px;
+  /* 陰影 */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.67) 2.86px 6.67px 14.29px;
+          box-shadow: rgba(0, 0, 0, 0.67) 2.86px 6.67px 14.29px;
+}
+
+.video-list li * {
+  -webkit-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.video-list li .video-cover {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-image: url(https://steamcdn-a.akamaihd.net/steam/clusters/sale_winter2019/d7c52af40566643c1780f24a/hero_435150_english.png?t=1577591676);
+}
+
+.video-list li .hover-screenshots {
+  height: 190px;
+  background: black;
+}
+
+.video-list li .hover-screenshots video,
+.video-list li .hover-screenshots img {
+  height: 100%;
+  width: 100%;
+}
+
+.video-list li .hero-content {
+  height: 170px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#294971), to(#113158));
+  background: linear-gradient(#294971 0%, #113158 100%);
+  padding: 20px 20px;
+  color: white;
+}
+
+.video-list li .hero-content .hero-title {
+  font-family: "微軟正黑體", "Motiva Sans", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.video-list li .hero-content .hero_stat {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.video-list li .hero-content .hero_stat .label {
+  color: #959595;
+  text-transform: uppercase;
+}
+
+.video-list li .hover-screenshots {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 0;
+}
+
+.video-list li .hero-content {
+  -webkit-transform: translateY(-210px);
+          transform: translateY(-210px);
+  opacity: 0;
+}
+
+.video-list li:hover .hover-screenshots,
+.video-list li:hover .hero-content {
+  -webkit-transform: translateY(-400px);
+          transform: translateY(-400px);
+  opacity: 1;
+}
+
+.video-list li:hover .video-cover {
+  opacity: 0.7;
+}
+/*# sourceMappingURL=style.css.map */

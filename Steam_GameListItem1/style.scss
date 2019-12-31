@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* 影片列表 */
+.video-list {
+  /* 不顯示順序編號 */
+  list-style-type: none;
+
+  li {
+    * {
+      transition: ease-out 0.4s;
+    }
+
+    height: 400px;
+    width: 320px;
+    overflow: hidden;
+
+    font-size: 12px;
+
+    /* 陰影 */
+    box-shadow: rgba(0, 0, 0, 0.67) 2.86px 6.67px 14.29px;
+
+    .video-cover {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      background-image: url(https://steamcdn-a.akamaihd.net/steam/clusters/sale_winter2019/d7c52af40566643c1780f24a/hero_435150_english.png?t=1577591676);
+    }
+
+    .hover-screenshots {
+      height: 190px;
+      background: black;
+      video,
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .hero-content {
+      height: 170px;
+      background: linear-gradient(
+        rgba(41, 73, 113, 1) 0%,
+        rgba(17, 49, 88, 1) 100%
+      );
+      padding: 20px 20px;
+
+      color: white;
+      .hero-title {
+        font-family: "微軟正黑體", "Motiva Sans", sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+      }
+
+      .hero_stat {
+        font-size: 12px;
+        margin-top: 5px;
+        .label {
+          color: rgba(149, 149, 149, 1);
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .hover-screenshots {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+
+    .hero-content {
+      transform: translateY(-210px);
+      opacity: 0;
+    }
+
+    &:hover {
+      .hover-screenshots,
+      .hero-content {
+        transform: translateY(-400px);
+        opacity: 1;
+      }
+
+      .video-cover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
