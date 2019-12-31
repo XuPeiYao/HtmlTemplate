@@ -8,6 +8,8 @@
         <div class="video-cover"></div>
         <div class="hover-screenshots">
           <video
+            muted
+            loop
             src="https://steamcdn-a.akamaihd.net/steam/apps/256694830/microtrailer.webm?t=1561485484?v=3"
           ></video>
         </div>
@@ -36,5 +38,29 @@
         </div>
       </li>
     </ol>
+
+    <script>
+      var items = document.querySelectorAll(".video-list>li");
+      for (let item of items) {
+        console.log(item);
+        item.addEventListener("mouseenter", function(e) {
+          console.log("in");
+          item.querySelector("video").play();
+        });
+        item.addEventListener("mouseout", function(e) {
+          var allChildren = item.querySelectorAll("*");
+          for (let child of allChildren) {
+            if (child === e.toElement) {
+              return;
+            }
+          }
+          console.log(e);
+
+          console.log("out");
+
+          item.querySelector("video").pause();
+        });
+      }
+    </script>
   </body>
 </html>
