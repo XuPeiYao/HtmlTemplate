@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
@@ -10,7 +11,7 @@
           <video
             muted
             loop
-            src="https://steamcdn-a.akamaihd.net/steam/apps/256694830/microtrailer.webm?t=1561485484?v=3"
+            src="https://www.sample-videos.com/video123/mp4/480/big_buck_bunny_480p_1mb.mp4"
           ></video>
         </div>
         <div class="hero-content">
@@ -41,20 +42,20 @@
 
     <script>
       var items = document.querySelectorAll(".video-list>li");
-      for (let item of items) {
-        console.log(item);
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
         item.addEventListener("mouseenter", function(e) {
           console.log("in");
           item.querySelector("video").play();
         });
         item.addEventListener("mouseout", function(e) {
           var allChildren = item.querySelectorAll("*");
-          for (let child of allChildren) {
+          for (var j = 0; j < allChildren.length; j++) {
+            var child = allChildren[j];
             if (child === e.toElement) {
               return;
             }
           }
-          console.log(e);
 
           console.log("out");
 
