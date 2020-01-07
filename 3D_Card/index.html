@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color:white">
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <script>
+      var items = document.querySelectorAll(".item");
+      items.forEach(x => {
+        x.addEventListener("mousemove", e => {
+          var x = ((e.offsetX - 60) / 60) * 15;
+          var y = -((e.offsetY - 60) / 60) * 15;
+
+          console.log(x + "," + y);
+
+          e.srcElement.style.transform = `rotateX(${y}deg) rotateY(${x}deg) scale3d(1.07, 1.07, 1.07)`;
+        });
+        x.addEventListener("mouseout", e => {
+          e.srcElement.style = transform = "";
+        });
+      });
+    </script>
+  </body>
+</html>
