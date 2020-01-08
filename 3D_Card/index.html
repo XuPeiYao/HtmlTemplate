@@ -5,29 +5,58 @@
   </head>
   <body style="background-color:white">
     <div class="container">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
+      <div class="item-box">
+        <div class="item"><div class="light"></div></div>
+      </div>
     </div>
     <script>
       var items = document.querySelectorAll(".item");
       items.forEach(x => {
+        console.log(x);
         x.addEventListener("mousemove", e => {
-          var x = ((e.offsetX - 60) / 60) * 15;
-          var y = -((e.offsetY - 60) / 60) * 15;
+          var x = -((e.offsetX - 60) / 60) * 15;
+          var y = ((e.offsetY - 60) / 60) * 15;
 
           console.log(x + "," + y);
 
-          e.srcElement.style.transform = `rotateX(${y}deg) rotateY(${x}deg) scale3d(1.07, 1.07, 1.07)`;
+          var target = e.srcElement;
+          if (e.srcElement.classList.contains("light")) {
+            target = e.srcElement.parentNode;
+          }
+
+          target.style.transform = `rotateX(${y}deg) rotateY(${x}deg) scale3d(1.07, 1.07, 1.07)`;
         });
         x.addEventListener("mouseout", e => {
-          e.srcElement.style = transform = "";
+          var target = e.srcElement;
+          if (e.srcElement.classList.contains("light")) {
+            target = e.srcElement.parentNode;
+          }
+
+          target.style.transform = "";
         });
       });
     </script>
